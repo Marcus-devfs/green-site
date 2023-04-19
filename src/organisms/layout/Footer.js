@@ -117,7 +117,7 @@ const styles = {
     container: {
         position: 'absolute',
         width: '100%',
-        backgroundColor: 'black',
+        backgroundColor: '#212121',
         alignItems: 'center',
         justifyContent: { xs: `center`, xm: 'space-between', md: 'space-between', lg: 'space-between' },
         display: 'flex',
