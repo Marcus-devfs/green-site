@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { Box } from '../atoms'
 import { AppProvider } from '../context/AppContext'
 import { Colors, HeaderMenu } from '../organisms'
 import '../styles/globals.css'
+import { useRouter } from 'next/router';
 
 const menuItems = [
    { to: '/home/Home', text: 'Processos' },
@@ -12,6 +14,15 @@ const menuItems = [
 ];
 
 function App({ Component, pageProps }) {
+
+   const router = useRouter()
+
+
+   useEffect(() => {
+      router.push('/home/Home')
+   }, [])
+   
+
    return (
       <AppProvider>
          <Box sx={styles.bodyContainer}>

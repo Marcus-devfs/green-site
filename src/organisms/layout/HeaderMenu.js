@@ -60,7 +60,7 @@ export const HeaderMenu = ({ menuItems = [] }) => {
                            padding: '1px 10px'
                         }}
                      >
-                        <Text small>{`${userName} | ${companyName}`}</Text>
+                        <Text small>{`${userName || 'Fazer Login'} | ${companyName || ''}`}</Text>
                      </Box>
                   </Box>
                </Box>
