@@ -5,19 +5,23 @@ import { useState } from "react"
 import { Box, Text } from "../../atoms"
 import { Colors } from "./Colors"
 import Hamburger from "hamburger-react"
+import { useAppContext } from "../../context/AppContext"
+import { DialogBoxUser } from "../user/DialogBoxUser"
 
 export const HeaderMenu = ({ menuItems = [] }) => {
 
+   const { user, logout } = useAppContext()
    const router = useRouter()
 
-   // let userName = (user?.name?.split(' ')[0])?.toUpperCase()
+   let userName = (user?.name?.split(' ')[0])?.toUpperCase()
    const pathname = router.pathname === '/' ? null : router.pathname.split('/')[1]
-
-   let userName = 'Marcus Silva';
-   let companyName = 'W3Lib';
+   let companyName = user?.companyId?.name;
 
    const [showMenuMobile, setShowMenuMobile] = useState(false)
-
+   const [showMenuUser, setShowMenuUser] = useState(false)
+   const [showUserOptions, setShowUserOptions] = useState(false)
+   const [showNewPasswordDialog, setShowNewPasswordDialog] = useState(false)
+   const [showChangePassword, setShowChangePassword] = useState(false)
    const theme = useTheme()
    const navBar = useMediaQuery(theme.breakpoints.down('md'))
 
@@ -48,7 +52,7 @@ export const HeaderMenu = ({ menuItems = [] }) => {
                         />
                      )}
                   </Box>
-                  <Box sx={{ ...styles.userBox }}>
+                  <Box sx={{ ...styles.userBox }} onClick={() => setShowMenuUser(!showMenuUser)}>
                      <Box
                         sx={{
                            display: 'flex',
@@ -60,8 +64,24 @@ export const HeaderMenu = ({ menuItems = [] }) => {
                            padding: '1px 10px'
                         }}
                      >
-                        <Text small>{`${userName || 'Fazer Login'} | ${companyName || ''}`}</Text>
+                        <Text small>{`${userName || 'Fazer Login'} | ${companyName || 'Company'}`}</Text>
                      </Box>
+
+                     {showMenuUser &&
+                        <>
+                           <Box sx={styles.containerUserOpitions}>
+                              <Box onClick={() => {
+                                 setShowUserOptions(!showUserOptions)
+                                 setShowNewPasswordDialog(true)
+                              }} sx={{ borderRadius: 1, padding: `4px 8px`, "&:hover": { backgroundColor: '#ddd', cursor: 'pointer' }, }}>
+                                 <Text style={{ ...styles.text, textAlign: 'center', }}>Alterar Senha</Text>
+                              </Box>
+                              <Box onClick={logout} sx={{ borderRadius: 1, padding: `4px 8px`, "&:hover": { backgroundColor: '#ddd', cursor: 'pointer' } }}>
+                                 <Text style={{ ...styles.text, textAlign: 'center' }}>Sair</Text>
+                              </Box>
+                           </Box>
+                        </>
+                     }
                   </Box>
                </Box>
             </>
@@ -128,6 +148,12 @@ export const HeaderMenu = ({ menuItems = [] }) => {
                   </> : ''}
             </>
          }
+         {showNewPasswordDialog && (
+            <DialogBoxUser
+               onClick={(value) => setShowNewPasswordDialog(value)}
+               value={showNewPasswordDialog}
+            />
+         )}
       </>
    )
 }
@@ -243,6 +269,16 @@ const styles = {
       padding: `40px 20px`,
       gap: 4,
       zIndex: 99999999,
-
+   },
+   containerUserOpitions: {
+      backgroundColor: Colors.background,
+      borderRadius: '0px 0px 10px 10px',
+      padding: 1,
+      display: 'flex',
+      flexDirection: 'column',
+      position: 'absolute',
+      top: 90,
+      width: '165px ',
+      boxSizing: 'border-box',
    },
 }
