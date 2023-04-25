@@ -13,6 +13,8 @@ const menuFooter = [
             { text: "Insights", link: '' },
             { text: "Sobre nós", link: '' },
             { text: "Carreiras", link: '' },
+            { text: "Sustentabilidade", link: '' },
+            { text: "Tour 360°", link: '' },
         ]
     },
     {
@@ -20,7 +22,11 @@ const menuFooter = [
         menu: 'Soluções',
         submenus: [
             { text: "Data Center Services", link: '' },
-            { text: "Data Center Modular", link: '' }
+            { text: "Data Center Carbon Zero", link: '' },
+            { text: "Data Center Modular", link: '' },
+            { text: "IoT Solutions", link: '' },
+            { text: "Cloud Services", link: '' },
+            { text: "Smart Cities", link: '' },
         ]
     },
     {
@@ -30,6 +36,10 @@ const menuFooter = [
             { text: "Administração", link: '' },
             { text: "Estrutua acionária", link: '' },
             { text: "Compliance", link: '' },
+            { text: "Canal de denúncias", link: '' },
+            { text: "Código de ética", link: '' },
+            { text: "Política anticorrupção", link: '' },
+            { text: "Política empresarial", link: '' },
         ]
     },
     {
@@ -38,7 +48,10 @@ const menuFooter = [
         submenus: [
             { text: "Fale Conosco", link: '' },
             { text: "Imprensa", link: '' },
-            { text: "Fale com um Especialista", link: '' }
+            { text: "Fale com um Especialista", link: '' },
+            { text: "Política de privacidade", link: '' },
+            { text: "Política de Cookies", link: '' },
+            { text: "Área do Cliente", link: '' },
         ]
     },
 ]
@@ -62,9 +75,10 @@ export const Footer = () => {
                     ...styles.icon,
                     backgroundImage: `url('/icons/logo_green.svg')`,
                     backgroundSize: 'contain',
-                    width: 90,
+                    filter: 'grayscale(1)',
+                    width: 120,
                     left: 90,
-                    height: 80,
+                    height: 100,
                     "&:hover": {
                         cursor: 'pointer', opacity: 0.8
                     }
@@ -72,15 +86,16 @@ export const Footer = () => {
                 <Box sx={styles.containerBox}>
                     {menuFooter.map((item) => (
                         <ContentContainer style={{
-                            alignItems: 'center',
+                            // alignItems: 'center',
                             display: 'flex',
                             boxShadow: 'none',
-                            backgroundColor: 'none'
+                            backgroundColor: 'none',
+                            marginBottom: 7
                         }} key={item.id}>
                             <Text large bold style={{ ...styles.text }}>{item.menu}</Text>
                             {item.submenus &&
                                 item.submenus.map((submenu) => (
-                                    <Box sx={{ display: 'flex', justifyContent: 'center' }} key={submenu.text}>
+                                    <Box sx={{ display: 'flex',  }} key={submenu.text}>
                                         <Link href={submenu.link} target='_blank'>
                                             <Text style={{ ...styles.text, }}>{submenu.text}</Text>
                                         </Link>
@@ -90,7 +105,7 @@ export const Footer = () => {
                         </ContentContainer>
                     ))}
                 </Box>
-                <Box sx={{ position: 'absolute', right: 50, bottom: 30, display: 'flex', flexDirection: 'column', }}>
+                <Box sx={{ position: 'absolute', right: 135, bottom: 110, display: 'flex', flexDirection: 'column', }}>
                     <Text bold large style={{ color: '#fff' }}>Siga a green4T</Text>
                     <Box sx={{ display: 'flex', marginTop: '5px'  }}>
                         {mediaIcons.map((item) => (
@@ -106,6 +121,17 @@ export const Footer = () => {
                         ))}
                     </Box>
                 </Box>
+                <Box sx={{
+                    display: 'flex',
+                    position: 'absolute',
+                    width: '90%',
+                    height: '20px',
+                    bottom: 20,
+                    padding: '30px',
+                    borderTop: 'solid 1px rgba(255,255,255,.16)',
+                    }}>
+                    <Text style={{color: 'gray'}}>© 2023 W3lib. Todos os direitos reservados.</Text>
+                </Box>
             </Box>
 
         </>
@@ -116,6 +142,8 @@ export const Footer = () => {
 const styles = {
     container: {
         position: 'absolute',
+        display: 'flex',
+        flexDirection: 'column',
         width: '100%',
         backgroundColor: '#212121',
         alignItems: 'center',
@@ -133,7 +161,6 @@ const styles = {
         marginBottom: 5
     },
     text: {
-        marginTop: '5px',
         color: '#fff'
     },
     icon: {

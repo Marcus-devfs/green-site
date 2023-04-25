@@ -46,12 +46,12 @@ const styles = {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.darkBlue,
       color: '#f0f0f0',
       padding: {xs:`6px 10px`, xm: `8px 16px`, md: `8px 16px`,lg: `8px 16px`},
       borderRadius: 2,
       "&:hover": {
-         backgroundColor: Colors.green + 'dd',
+         backgroundColor: Colors.darkBlue + 'dd',
          cursor: 'pointer'
       }
    }

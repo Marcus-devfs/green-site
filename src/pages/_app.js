@@ -4,6 +4,7 @@ import { AppProvider } from '../context/AppContext'
 import { Colors, HeaderMenu } from '../organisms'
 import '../styles/globals.css'
 import { useRouter } from 'next/router';
+import { ProtectRoute } from '../context/ProtectRoute';
 
 const menuItems = [
    { to: '/home/Home', text: 'Processos' },
@@ -21,16 +22,18 @@ function App({ Component, pageProps }) {
    useEffect(() => {
       router.push('/home/Home')
    }, [])
-   
+
 
    return (
       <AppProvider>
-         <Box sx={styles.bodyContainer}>
-            <HeaderMenu menuItems={menuItems} />
-            <Box sx={styles.contentContainer}>
-               <Component {...pageProps} />
+         <ProtectRoute>
+            <Box sx={styles.bodyContainer}>
+               <HeaderMenu menuItems={menuItems} />
+               <Box sx={styles.contentContainer}>
+                  <Component {...pageProps} />
+               </Box>
             </Box>
-         </Box>
+         </ProtectRoute>
       </AppProvider>
    )
 }

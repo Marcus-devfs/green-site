@@ -50,7 +50,7 @@ export const AppProvider = ({ children }) => {
 
    const login = async ({ email, password }) => {
       try {
-         const response = await api.post('/user/login', { email, password })
+         const response = await api.post('/auth/login', { email, password })
          if (response.data.token) {
             const { token } = response.data;
             const { permissions = [] } = response.data;
@@ -60,7 +60,7 @@ export const AppProvider = ({ children }) => {
             api.defaults.headers.Authorization = `Bearer ${token}`
             setUser(response.data)
 
-            if (userIsNotAdmin) router.push('/files/list');
+            if (userIsNotAdmin) router.push('/home/Home');
 
             return response
          }
