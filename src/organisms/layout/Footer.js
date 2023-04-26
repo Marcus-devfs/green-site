@@ -10,58 +10,58 @@ const menuFooter = [
         id: '01',
         menu: 'A empresa',
         submenus: [
-            { text: "Insights", link: '' },
-            { text: "Sobre nós", link: '' },
-            { text: "Carreiras", link: '' },
-            { text: "Sustentabilidade", link: '' },
-            { text: "Tour 360°", link: '' },
+            { text: "Insights", link: 'https://www.green4t.com/insights/' },
+            { text: "Sobre nós", link: 'https://www.green4t.com/sobre-nos/' },
+            { text: "Carreiras", link: 'https://www.green4t.com/career/' },
+            { text: "Sustentabilidade", link: 'https://www.green4t.com/sustentabilidade/' },
+            { text: "Tour 360°", link: 'https://www.green4t.com/tour-360/' },
         ]
     },
     {
         id: '01',
         menu: 'Soluções',
         submenus: [
-            { text: "Data Center Services", link: '' },
-            { text: "Data Center Carbon Zero", link: '' },
-            { text: "Data Center Modular", link: '' },
-            { text: "IoT Solutions", link: '' },
-            { text: "Cloud Services", link: '' },
-            { text: "Smart Cities", link: '' },
+            { text: "Data Center Services", link: 'https://www.green4t.com/solucoes/data-center-services/' },
+            { text: "Data Center Carbon Zero", link: 'https://www.green4t.com/solucoes/data-center-carbon-zero/' },
+            { text: "Data Center Modular", link: 'https://www.green4t.com/solucoes/data-center-modulares/' },
+            { text: "IoT Solutions", link: 'https://www.green4t.com/es/soluciones/iot-solutions/' },
+            { text: "Cloud Services", link: 'https://www.green4t.com/es/soluciones/cloud-services/' },
+            { text: "Smart Cities", link: 'https://www.green4t.com/solucoes/smart-cities/' },
         ]
     },
     {
         id: '01',
         menu: 'Governança',
         submenus: [
-            { text: "Administração", link: '' },
-            { text: "Estrutua acionária", link: '' },
-            { text: "Compliance", link: '' },
-            { text: "Canal de denúncias", link: '' },
-            { text: "Código de ética", link: '' },
-            { text: "Política anticorrupção", link: '' },
-            { text: "Política empresarial", link: '' },
+            { text: "Administração", link: 'https://www.green4t.com/administracao/#administracao' },
+            { text: "Estrutua acionária", link: 'https://www.green4t.com/administracao/' },
+            { text: "Compliance", link: 'https://www.green4t.com/compliance/' },
+            { text: "Canal de denúncias", link: 'https://www.green4t.com/canal-de-denuncias/' },
+            { text: "Código de ética", link: 'https://www.green4t.com/wp-content/uploads/2021/09/Codigo_de_Conduta_Etica_green4T.pdf' },
+            { text: "Política anticorrupção", link: 'https://www.green4t.com/wp-content/uploads/2021/09/Politica_Anticorrupcao_green4T.pdf' },
+            { text: "Política empresarial", link: 'https://www.green4t.com/wp-content/uploads/2023/01/politica_empresarial_green4T.pdf' },
         ]
     },
     {
         id: '01',
         menu: 'Contato',
         submenus: [
-            { text: "Fale Conosco", link: '' },
-            { text: "Imprensa", link: '' },
-            { text: "Fale com um Especialista", link: '' },
-            { text: "Política de privacidade", link: '' },
-            { text: "Política de Cookies", link: '' },
-            { text: "Área do Cliente", link: '' },
+            { text: "Fale Conosco", link: 'https://www.green4t.com/contato/' },
+            { text: "Fale com um Especialista", link: 'https://www.green4t.com/fale-com-um-especialista/' },
+            { text: "Imprensa", link: 'https://www.green4t.com/imprensa/' },
+            { text: "Política de privacidade", link: 'https://www.green4t.com/politica-de-privacidade/' },
+            { text: "Política de Cookies", link: 'https://www.green4t.com/politica-de-cookies/' },
+            { text: "Área do Cliente", link: 'https://clientes.green4t.com/' },
         ]
     },
 ]
 
 const mediaIcons = [
-    { id: '01', name: 'facebook', url: '/icons/facebook_logo.png' },
-    { id: '02', name: 'instagram', url: '/icons/instagram_logo.webp' },
-    { id: '03', name: 'linkedin', url: '/icons/linkedin_logo.webp' },
-    { id: '04', name: 'youtube', url: '/icons/youtube_icon.svg' },
-    { id: '05', name: 'spotify', url: '/icons/spotify_icon.png' },
+    { id: '01', name: 'facebook', url: 'https://www.green4t.com/wp-content/uploads/2021/07/facebook-2.png', link: 'https://www.facebook.com/green4t/' },
+    { id: '02', name: 'instagram', url: 'https://www.green4t.com/wp-content/uploads/2021/07/instagram.png', link: 'https://www.instagram.com/green4t/' },
+    { id: '03', name: 'linkedin', url: 'https://www.green4t.com/wp-content/uploads/2021/07/linkedin.png', link: 'https://www.linkedin.com/company/green4t/' },
+    { id: '04', name: 'youtube', url: 'https://www.green4t.com/wp-content/uploads/2021/07/youtube.png', link: 'https://www.youtube.com/channel/UCrviQBC1rZ47yRu-nHadqCg' },
+    { id: '05', name: 'spotify', url: 'https://www.green4t.com/wp-content/uploads/2021/07/logotipo-spotify.png', link: 'https://open.spotify.com/show/7Hm6CmUbxKrzUmKbXsZHFl?si=f3c137bffdfa4dad&nd=1' },
 ]
 
 export const Footer = () => {
@@ -73,12 +73,12 @@ export const Footer = () => {
             <Box sx={styles.container} id={'#footer'}>
                 <Box sx={{
                     ...styles.icon,
-                    backgroundImage: `url('/icons/logo_green.svg')`,
+                    backgroundImage: `url('https://www.green4t.com/wp-content/uploads/2021/07/logo-green4t-b.svg')`,
                     backgroundSize: 'contain',
-                    filter: 'grayscale(1)',
                     width: 120,
                     left: 90,
-                    height: 100,
+                    top: 30,
+                    height: 34,
                     "&:hover": {
                         cursor: 'pointer', opacity: 0.8
                     }
@@ -95,7 +95,7 @@ export const Footer = () => {
                             <Text large bold style={{ ...styles.text }}>{item.menu}</Text>
                             {item.submenus &&
                                 item.submenus.map((submenu) => (
-                                    <Box sx={{ display: 'flex',  }} key={submenu.text}>
+                                    <Box sx={{ display: 'flex', }} key={submenu.text}>
                                         <Link href={submenu.link} target='_blank'>
                                             <Text style={{ ...styles.text, }}>{submenu.text}</Text>
                                         </Link>
@@ -105,18 +105,22 @@ export const Footer = () => {
                         </ContentContainer>
                     ))}
                 </Box>
-                <Box sx={{ position: 'absolute', right: 135, bottom: 110, display: 'flex', flexDirection: 'column', }}>
+                <Box sx={{ position: 'absolute', right: 135, bottom: 120, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Text bold large style={{ color: '#fff' }}>Siga a green4T</Text>
-                    <Box sx={{ display: 'flex', marginTop: '5px'  }}>
+                    <Box sx={{ display: 'flex', marginTop: '5px', }}>
                         {mediaIcons.map((item) => (
-                            <Box key={item.id} sx={{ width: '100%', justifyContent: 'space-between', }}>
-                                <Box sx={{
-                                    ...styles.icon,
-                                    position: 'relative',
-                                    backgroundImage: `url(${item.url})`,
-                                    filter: 'grayscale(1)',
-                                    color: '#fff',
-                                }} />
+                            <Box key={item.id} sx={{ width: '100%', justifyContent: 'space-between', padding: '0px 2px' }}>
+                                <Link href={item.link} target='_blank'>
+                                    <Box sx={{
+                                        ...styles.icon,
+                                        width: 25,
+                                        height: 25,
+                                        position: 'relative',
+                                        backgroundImage: `url(${item.url})`,
+                                        color: '#fff',
+                                        cursor: 'pointer'
+                                    }} />
+                                </Link>
                             </Box>
                         ))}
                     </Box>
@@ -129,8 +133,8 @@ export const Footer = () => {
                     bottom: 20,
                     padding: '30px',
                     borderTop: 'solid 1px rgba(255,255,255,.16)',
-                    }}>
-                    <Text style={{color: 'gray'}}>© 2023 W3lib. Todos os direitos reservados.</Text>
+                }}>
+                    <Text style={{ color: 'gray' }}>© 2023 W3lib. Todos os direitos reservados.</Text>
                 </Box>
             </Box>
 
@@ -158,7 +162,7 @@ const styles = {
         width: '100%',
         padding: '10px',
         justifyContent: { xs: `center`, xm: 'space-between', md: 'space-between', lg: 'space-between' },
-        marginBottom: 5
+        marginBottom: 8
     },
     text: {
         color: '#fff'

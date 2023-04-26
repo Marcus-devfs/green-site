@@ -193,6 +193,7 @@ const styles = {
       backgroundColor: '#fff',
       padding: `25px 50px`,
       gap: 4,
+      zIndex: 9999
    },
    userBox: {
       backgroundColor: '#F2F2F2',
